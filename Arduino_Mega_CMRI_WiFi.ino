@@ -379,7 +379,7 @@ void setup() {
   }
 
  // Setup Panel 16
-  if (Panel15Input) {
+  if (Panel16Input) {
     pinMode(A12, INPUT_PULLUP); 
     pinMode(A13, INPUT_PULLUP); 
     pinMode(A14, INPUT_PULLUP); 
@@ -640,7 +640,7 @@ void loop(){
   }
 
   // Process Panel 16 - CMRI Addresses 1061 - 1064
-  if (Panel15Input) {
+  if (Panel16Input) {
     cmri.set_bit(60, checkAnalogThreshold(analogRead(A12)));
     cmri.set_bit(61, checkAnalogThreshold(analogRead(A13)));
     cmri.set_bit(62, checkAnalogThreshold(analogRead(A14)));
