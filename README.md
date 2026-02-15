@@ -10,12 +10,6 @@ JMRI to read physical inputs (sensors, pushbuttons) and control outputs
 
 ---
 
-## Repository Contents
-
-- `Arduino_Mega_CMRI_WiFi.ino` — main Arduino sketch
-
----
-
 ## Overview
 
 This sketch:
@@ -261,3 +255,10 @@ This project integrates with the Arduino CMRI ecosystem. The following projects 
 These projects may be used together to form a complete CMRI‑controlled lighting and I/O system.
 
 ---
+
+## Repository Contents
+
+```text
+/
+├── Arduino_Mega_CMRI_WiFi.ino   # Arduino sketch
+└── README.md                    # This file
