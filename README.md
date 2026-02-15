@@ -232,6 +232,10 @@ This project integrates with the Arduino CMRI ecosystem. The following projects 
   ESP sketch to program the ESP8266-ESP01 to work with the Arduino Mega 2560 and connection configuration for your WiFi network.
   https://github.com/scostella/ESP8266WiFiSetup
 
+- **KiCad Custom Library**  
+  Library containing all project parts in all designs.
+  https://github.com/scostella/KiCadLibrary
+
 - **Arduino Mega CMRI WiFi Shield**  
   KiCad design for a shield for the Arduino Mega 2560 facilitating easy integration with the ESP8266-ESP01 and the CMRI modules listed below.
   https://github.com/scostella/Arduino_Mega_CMRI_WiFi_Shield
