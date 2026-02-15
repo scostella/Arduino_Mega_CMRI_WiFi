@@ -205,4 +205,59 @@ CMRI Address reflects value for Node 1, for other Node values, replace the leadi
 | 62 | Panel 16 | A14 | 1063 |
 | 63 | Panel 16 | A15 | 1064 |
 
+---
 
+## Limited Liability and Disclaimer
+
+This project is provided as an **open‑source hardware design** and is offered **as‑is**, without warranty of any kind.
+
+By using this design, documentation, or any assembled hardware provided by the author, you agree to the following:
+
+- You assume **all responsibility** for proper electrical design, wiring, installation, and use
+- The author makes **no guarantees** regarding suitability for any specific application
+- The author shall not be held liable for:
+  - Damage to equipment
+  - Electrical failures
+  - Personal injury
+  - Property damage
+  - Losses resulting from improper use, installation, or modification
+
+Use of this project or any associated hardware constitutes acceptance of these terms.
+
+---
+
+## Reference Projects
+
+This project integrates with the Arduino CMRI ecosystem. The following projects provide related hardware, firmware, and configuration support:
+
+- **Arduino Mega CMRI WiFi**  
+  Arduino sketch for Mega 2560 to operate as CMRI Node with an ESP8266-ESP01 providing WiFi connectivity.
+  https://github.com/scostella/Arduino_Mega_CMRI_WiFi
+
+- **ESP8266 WiFi Setup Utility**  
+  ESP sketch to program the ESP8266-ESP01 to work with the Arduino Mega 2560 and connection configuration for your WiFi network.
+  https://github.com/scostella/ESP8266WiFiSetup
+
+- **Arduino Mega CMRI WiFi Shield**  
+  KiCad design for a shield for the Arduino Mega 2560 facilitating easy integration with the ESP8266-ESP01 and the CMRI modules listed below.
+  https://github.com/scostella/Arduino_Mega_CMRI_WiFi_Shield
+
+- **Arduino Accessory Controller**  
+  KiCad design for a board to control accessories up to 1 amp.
+  https://github.com/scostella/Arduino-Accessory-Controller
+
+- **Arduino IR Sensor Module - 8 Port**  
+  KiCad design for a board to use TCRT5000 IR module to sense object presence which can also be used in the Arduino Mega CMRI WiFi module to group sensors to create virtual block detection.
+  https://github.com/scostella/Arduino_IR_Sensor_Module_-_8_Port
+
+- **Arduino Tortoise Controller with Feedback - 8 Port**  
+  KiCad design for a board to control Circuitron Tortoise Slow Motion Switch machines and provide feedback on switch position either controlled internally by the voltage applied to the tortoise or an external signal.
+  https://github.com/scostella/Arduino_Tortoise_Controller_with_Feedback_-_8_Port
+
+- **Arduino Light Controller**  
+  KiCad design for a board to control low amperage lighting and other loads (<10ma) using the Arduino's 5V source.
+  https://github.com/scostella/Arduino-Light-Controller
+
+These projects may be used together to form a complete CMRI‑controlled lighting and I/O system.
+
+---
