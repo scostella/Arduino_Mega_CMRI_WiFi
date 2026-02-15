@@ -108,6 +108,7 @@ Configure the node address on the following line, default is 1.  As each network
 ```cpp
 #define CMRI_ADDR 1
 CMRI cmri(CMRI_ADDR, 128, 64, Serial3);
+```
 
 ### Panel operation (Input/Output)
 Change value to True if the panel connected provides input (IR Sensor, Tortoise Feedback) the and false if it's an output (Accessory Controller, Light Controller, Tortoise Control).
@@ -132,6 +133,7 @@ bool Panel13Input = false;
 bool Panel14Input = false;
 bool Panel15Input = false;
 bool Panel16Input = false;
+```
 
 ### C/MRI Bit Mapping
 CMRI Address reflects value for Node 1, for other Node values, replace the leading 1 with that Node value.
