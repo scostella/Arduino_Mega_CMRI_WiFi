@@ -58,7 +58,7 @@ ESP8266 firmware is **not included** in this repository.
 | :---: | :---: | :---: | :---: |
 | 14 | TX3 | UTX | 1 |
 | 15 | RX3 | URX | 8 |
-| GND | Ground | GND | Ground |
+| GND | Ground | GND | 2 |
 
 > ⚠️ ESP8266 uses **3.3 V logic**.  
 > Use proper level shifting if required, the Arduino Mega CMRI WiFi Shield provides this level shifting.
@@ -74,7 +74,7 @@ ESP8266 firmware is **not included** in this repository.
 ### Digital Pin Panels
 
 | Panel | Pins |
-|--------|----------|---------|
+| :---: | :---: | :---: |
 | Panel 1 | 2, 3, 16, 17 |
 | Panel 2 | 4, 5, 6, 7 |
 | Panel 3 | 8, 9, 10, 11 |
@@ -138,7 +138,7 @@ bool Panel16Input = false;
 CMRI Address reflects value for Node 1, for other Node values, replace the leading 1 with that Node value.
 
 | C/MRI Bit | Panel | Arduino Mega Pin | CMRI Address |
-|----------:|:------|:------------------|:------------------------|
+| :---: | :---: | :---: | :---: |
 | 0 | Panel 1 | D2 | 1001 |
 | 1 | Panel 1 | D3 | 1002 |
 | 2 | Panel 1 | D16 | 1003 |
