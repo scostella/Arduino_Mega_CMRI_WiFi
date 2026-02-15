@@ -72,7 +72,6 @@ ESP8266 firmware is **not included** in this repository.
   - Onboard LED mirrors JMRI connection state
 
 ### Digital Pin Panels
-
 | Panel | Pins |
 | :---: | :---: | :---: |
 | Panel 1 | 2, 3, 16, 17 |
