@@ -48,20 +48,21 @@ ESP8266 firmware is **not included** in this repository.
 ### Reserved Pins
 ```markdown
 |  Pin  | Purpose |
-|-------|------------------------------------------------------|
-|  0-1  | Serial0 (USB programming / debugging)                |
+|:-------:|:------------------------------------------------------:|
+|: 0-1 :| Serial0 (USB programming / debugging)                |
 |   12  | JMRI connection status input from ESP8266            |
 |   13  | Onboard LED visual display of JMRI connection status |
 | 14-15 | Serial3 communication to ESP8266                     |
 ```
 
 ### Serial3 (Mega ↔ ESP8266)
-
+```markdown
 | Mega Pin | Function | ESP8266-ESP01 | ESP8266-ESP01 Pin |
-|--------|----------|---------|
-| 14 | TX3 | UTX | 1 |
-| 15 | RX3 | URX | 8 |
+|-----|--------|---------|
+| 14  |  TX3   | UTX | 1 |
+| 15  |  RX3   | URX | 8 |
 | GND | Ground | GND |
+```
 
 > ⚠️ ESP8266 uses **3.3 V logic**.  
 > Use proper level shifting if required, the Arduino Mega CMRI WiFi Shield provides this level shifting.
