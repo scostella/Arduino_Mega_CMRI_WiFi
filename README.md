@@ -201,5 +201,8 @@ CMRI Address reflects value for Node 1, for other Node values, replace the leadi
 | 58 | Panel 15 | A10 | 1059 |
 | 59 | Panel 15 | A11 | 1060 |
 | 60 | Panel 16 | A12 | 1061 |
+| 61 | Panel 16 | A13 | 1062 |
+| 62 | Panel 16 | A14 | 1063 |
+| 63 | Panel 16 | A15 | 1064 |
 
 
