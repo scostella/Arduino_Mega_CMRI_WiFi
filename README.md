@@ -53,7 +53,7 @@ ESP8266 firmware is **not included** in this repository.
 | 12 | JMRI connection status input from ESP8266 |
 | 13 | Onboard LED visual display of JMRI connection status |
 | 14-15 | Serial3 communication to ESP8266 |
-...
+```
 
 ### Serial3 (Mega ↔ ESP8266)
 
