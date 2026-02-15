@@ -1,4 +1,4 @@
-# Arduino_Mega_CMRI_WiFi
+# Arduino Mega CMRI WiFi
 
 Arduino Mega 2560 sketch that exposes GPIO to **JMRI** or other C/MRI supporting software via the  
 **C/MRI (CMRInet)** protocol, using an **ESP8266 Wi‑Fi bridge** connected on
