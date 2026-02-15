@@ -54,13 +54,11 @@ ESP8266 firmware is **not included** in this repository.
 | 14-15 | Serial3 communication to ESP8266 |
 
 ### Serial3 (Mega ↔ ESP8266)
-```markdown
 | Mega Pin | Function | ESP8266-ESP01 | ESP8266-ESP01 Pin |
-|-----|--------|---------|
-| 14  |  TX3   | UTX | 1 |
-| 15  |  RX3   | URX | 8 |
-| GND | Ground | GND |
-```
+| :---: | :---: | :---: | :---: |
+| 14 | TX3 | UTX | 1 |
+| 15 | RX3 | URX | 8 |
+| GND | Ground | GND | Ground |
 
 > ⚠️ ESP8266 uses **3.3 V logic**.  
 > Use proper level shifting if required, the Arduino Mega CMRI WiFi Shield provides this level shifting.
