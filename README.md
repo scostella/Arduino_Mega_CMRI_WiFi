@@ -73,7 +73,7 @@ ESP8266 firmware is **not included** in this repository.
 
 ### Digital Pin Panels
 | Panel | Pins |
-| :---: | :---: | :---: |
+| :---: | :---: |
 | Panel 1 | 2, 3, 16, 17 |
 | Panel 2 | 4, 5, 6, 7 |
 | Panel 3 | 8, 9, 10, 11 |
