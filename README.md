@@ -203,7 +203,7 @@ CMRI Address reflects value for Node 1, for other Node values, replace the leadi
 
 ## Limited Liability and Disclaimer
 
-This project is provided as an **open‑source hardware design** and is offered **as‑is**, without warranty of any kind.
+This project is provided as an **open‑source hardware and software design** and is offered **as‑is**, without warranty of any kind.
 
 By using this design, documentation, or any assembled hardware provided by the author, you agree to the following:
 
