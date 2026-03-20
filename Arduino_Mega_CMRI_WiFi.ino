@@ -43,30 +43,31 @@ String buffer = "";
 
 bool cmriStreamActive = false;
 bool cmriPollingStarted = false;
+bool enableWDT = false;
 
 // Defining if panels are input or ouput
 
 bool Panel1Input = false;
 bool Panel2Input = false;
-bool Panel3Input = true;
+bool Panel3Input = false;
 bool Panel4Input = false;
 
-bool Panel5Input = true;
-bool Panel6Input = true;
-bool Panel7Input = true;
-bool Panel8Input = true;
+bool Panel5Input = false;
+bool Panel6Input = false;
+bool Panel7Input = false;
+bool Panel8Input = false;
 
-bool Panel9Input = true;
-bool Panel10Input = true;
-bool Panel11Input = true;
-bool Panel12Input = true;
+bool Panel9Input = false;
+bool Panel10Input = false;
+bool Panel11Input = false;
+bool Panel12Input = false;
 
 bool Panel13Input = false;
 bool Panel14Input = false;
 bool Panel15Input = false;
 bool Panel16Input = false;
 
-#define CMRI_ADDR 1 //CMRI node address in JMRI 
+#define CMRI_ADDR 21 //CMRI node address in JMRI 
 
 CMRI cmri(CMRI_ADDR, 128, 64, Serial3);
 
@@ -129,26 +130,34 @@ CMRI cmri(CMRI_ADDR, 128, 64, Serial3);
 
 void setup() { 
 
-  uint8_t mcusr_mirror = MCUSR;
+  if(enableWDT) {
 
-  // Check if watchdog caused the reset
-  if (mcusr_mirror & (1 << WDRF)) {
-    watchdogReset = true;
+    uint8_t mcusr_mirror = MCUSR;
+
+    // Check if watchdog caused the reset
+    if (mcusr_mirror & (1 << WDRF)) {
+      watchdogReset = true;
+    }
+
+    // Clear all reset flags
+    MCUSR = 0;
+
+    // Disable watchdog (important to avoid immediate reset)
+    wdt_disable();
+
   }
-
-  // Clear all reset flags
-  MCUSR = 0;
-
-  // Disable watchdog (important to avoid immediate reset)
-  wdt_disable();
 
   Serial.begin(115200);
 
   Serial.println("-------------------------------");
   Serial.println("Starting Mega Initialization");
 
-  if (watchdogReset) {
-    Serial.println("Mega last reset was caused by the Watchdog Timer.");
+  if(enableWDT) {
+
+    if (watchdogReset) {
+      Serial.println("Mega last reset was caused by the Watchdog Timer.");
+    }
+
   }
 
   // Setting up Pin 12 for Input ESP8266 JMRI Connect indication
@@ -156,14 +165,17 @@ void setup() {
   pinMode(JMRIConnectedPin, INPUT_PULLUP); 
   pinMode(13, OUTPUT);
   
-  // Disable interrupts while configuring WDT
-  cli();
+  if(enableWDT) {
 
-  // Enable watchdog with 2‑second timeout
-  wdt_enable(WDTO_2S);
+    // Disable interrupts while configuring WDT
+    cli();
 
-  // Re-enable interrupts
-  sei();
+    // Enable watchdog with 2‑second timeout
+    wdt_enable(WDTO_2S);
+
+    // Re-enable interrupts
+    sei();
+  }
 
   Serial.println("Mega watchdog enabled (2s timeout)");
 
@@ -210,7 +222,7 @@ void setup() {
     pinMode(11, OUTPUT); 
   }
 
-// Setup Panel 4
+  // Setup Panel 4
   if (Panel4Input) {
     pinMode(18, INPUT_PULLUP); 
     pinMode(19, INPUT_PULLUP); 
@@ -417,8 +429,11 @@ void loop(){
   //   wdt_reset();
   // }
 
-  if(cmriStreamActive) {
-    wdt_reset();
+  if(enableWDT) {
+
+    if(cmriStreamActive) {
+      wdt_reset();
+    }
   }
 
   if (digitalRead(JMRIConnectedPin)) {
@@ -731,8 +746,12 @@ void WaitJMRIConnected() {
       return;   // exit the function once detected
     }
 
-    // Reset (kick) the watchdog so it doesn't reset the board 
-    wdt_reset();
+    if(enableWDT) {
+
+      // Reset (kick) the watchdog so it doesn't reset the board 
+      wdt_reset();
+
+    }
 
   }
 }
