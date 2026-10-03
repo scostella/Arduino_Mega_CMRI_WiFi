@@ -1,14 +1,14 @@
 # Arduino Mega CMRI WiFi
 
 Arduino Mega 2560 sketch that exposes GPIO to **JMRI** or other C/MRI supporting software via the  
-**C/MRI (CMRInet)** protocol, using an **ESP8266 Wi‑Fi bridge** connected on
+**C/MRI (CMRInet)** protocol, using an **ESP8266 ESP-01 Wi‑Fi bridge** connected on
 **Serial3**.
 
 This sketch uses the **ArduinoCMRI** library to emulate a C/MRI node, allowing
 JMRI to read physical inputs (sensors, pushbuttons) and control outputs
 (relays, LEDs, signals, control panels) on a model railroad layout.
 
-If you're interested in both how I got to the point of developing a network based JMRI solution and my progress in migrating to it, be sure to check out my journal at [My Journey](MyJourney/MyJourney.md).
+If you're interested in both how I got to the point of developing a network based C/MRI solution and my progress in migrating to it, be sure to check out my journal at [My Journey](MyJourney/MyJourney.md).
 
 NOTE: It is highly recommended that your JMRI workstation uses a wired connection to the network.
 ---
@@ -18,11 +18,12 @@ NOTE: It is highly recommended that your JMRI workstation uses a wired connectio
 This sketch:
 
 - Runs on an **Arduino Mega 2560**
-- Communicates with an **ESP8266** over **Serial3** (pins 14/15)
+- Communicates with an **ESP8266 ESP-01** over **Serial3** (pins 14/15)
 - Presents **64 C/MRI bits** to JMRI (16 panels × 4 I/O each)
 - Allows each panel to be independently configured as **input or output**
 - Supports **analog pins used as digital inputs/outputs**
 - Uses a **2‑second watchdog timer** to recover from lost communication
+- Provides **virtual sensors** for occupancy detection by grouping individual detection sensors
 
 The ESP8266 handles the Wi‑Fi/TCP connection to JMRI.  
 ESP8266 firmware is **not included** in this repository.
