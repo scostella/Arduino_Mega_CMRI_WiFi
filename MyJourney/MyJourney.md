@@ -21,7 +21,7 @@ Several years ago I stumbled upon the first in a series of videos in the Little 
 
 ### What I Didn't Expect
 
-When cleaning the track, I actually found I enjoyed sitting back and watching the trains run automatically.  Clean a track, shift another train currently parked in the next location to clean, and repeat until the whole layout was cleaned.  This started a whole new endeavor which involved the installation of over 250 sensors monitoring all segments of track, moving from DCC based turnout control to C/MRI control, and even transitioning my static lighting into CMRI so I can futher extend the realism with reactive lighting effects.
+When cleaning the track, I actually found I enjoyed sitting back and watching the trains run automatically.  Clean a track, shift another train currently parked in the next location to clean, and repeat until the whole layout was cleaned.  This started a whole new endeavor which involved the installation of over 250 sensors monitoring all segments of track, moving from DCC based turnout control to C/MRI control, and even transitioning my static lighting into C/MRI so I can futher extend the realism with reactive lighting effects.
 
 ## Where I Am Now
 
