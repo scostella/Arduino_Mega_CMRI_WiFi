@@ -93,7 +93,8 @@ ESP8266 firmware is **not included** in this repository.
 ## Dependencies
 
 - Arduino IDE (or PlatformIO)
-- **ArduinoCMRI** library (`CMRI.h`)
+- **ArduinoCMRI** library (`CMRI.h`)  
+  - https://github.com/madleech/ArduinoCMRI
 
 ---
 
