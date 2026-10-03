@@ -8,7 +8,7 @@ This sketch uses the **ArduinoCMRI** library to emulate a C/MRI node, allowing
 JMRI to read physical inputs (sensors, pushbuttons) and control outputs
 (relays, LEDs, signals, control panels) on a model railroad layout.
 
-If you're interested in both how I got to the point of developing a network based C/MRI solution and my progress in migrating to it, be sure to check out my journal at [My Journey](MyJourney/MyJourney.md).
+If you're interested in both how I got to the point of developing a network based C/MRI solution and my progress in migrating to it, be sure to check out my journal at [My Journey](https://github.com/scostella/MyCMRIJourney).
 
 NOTE: It is highly recommended that your JMRI workstation uses a wired connection to the network.
 ---
