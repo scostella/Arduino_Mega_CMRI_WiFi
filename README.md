@@ -204,6 +204,90 @@ CMRI Address reflects value for Node 1, for other Node values, replace the leadi
 
 ---
 
+## Virtual Occupancy Detection
+
+Virtual Occupancy Detection allows you to group multiple sensors together so they behave like a single block‑occupancy detector. If any sensor in the group is active, the virtual block is considered occupied. This provides an alternative to traditional current‑sensing detectors, which require full electrical isolation of the block.
+
+This feature is especially useful for:
+
+- yards with multiple parking spots
+
+- industrial areas with several detection points
+
+- complex blocks where multiple IR sensors cover different segments
+
+- layouts where electrical block isolation is difficult or undesirable
+
+Virtual occupancy lets you treat all those sensors as one unified block.
+
+### How It Works
+
+The Arduino sketch implements virtual occupancy detection in four steps:
+
+#### 1. Define Sensor Pins (Lines 74–117)  
+Each sensor is assigned a label and mapped to a physical Arduino pin.
+Here's an example from my layout which uses IR sensors.
+
+Example:
+
+```cpp
+#define SN_HY1A_EOL 26
+#define SN_HY1A_PARK 28
+#define SN_HY1A_4 30
+#define SN_HY1A_3 32
+#define SN_HY1A_2 34
+#define SN_HY1A_1 36
+#define SN_HY1A_SOL 38
+```
+
+These sensors collectively represent the HY1A block.
+
+#### 2. Create Virtual Occupancy Variables (Lines 121–129)  
+Each block gets a boolean variable that stores whether the block is occupied.
+```cpp
+bool OC_HY1A;
+bool OC_HY1B;
+bool OC_HY2A;
+bool OC_HY2B;
+bool OC_HY2C;
+```
+#### 3.  Evaluate Sensor Groups (Lines 674–710)
+During each loop, the sketch checks all sensors in a group.
+If any sensor reads active (LOW for IR modules), the block is marked occupied.
+
+Example:
+
+```cpp
+if(!digitalRead(SN_HY1A_EOL) ||
+   !digitalRead(SN_HY1A_PARK) ||
+   !digitalRead(SN_HY1A_4) ||
+   !digitalRead(SN_HY1A_3) ||
+   !digitalRead(SN_HY1A_2) ||
+   !digitalRead(SN_HY1A_1) ||
+   !digitalRead(SN_HY1A_SOL)) {
+    OC_HY1A = true;
+}
+```
+This allows you to place multiple sensors anywhere within the block and treat them as one.
+
+#### 4. Report Virtual Occupancy to JMRI (Lines 712–720)
+Virtual occupancy values are sent back to JMRI using C/MRI bits.
+You start these at CMRI Address 101.
+
+Example:
+
+```cpp
+cmri.set_bit(100, OC_INTXNW); // CMRI ADDRESS 1101
+cmri.set_bit(101, OC_INTXNE); // CMRI ADDRESS 1102
+cmri.set_bit(102, OC_HY1B);   // CMRI ADDRESS 1103
+cmri.set_bit(103, OC_HY2C);   // CMRI ADDRESS 1104
+cmri.set_bit(104, OC_HY1A);   // CMRI ADDRESS 1105
+cmri.set_bit(105, OC_HY2A);   // CMRI ADDRESS 1106
+cmri.set_bit(106, OC_HY2B);   // CMRI ADDRESS 1107
+```
+
+JMRI sees these bits exactly like any other sensor input, allowing you to associate it to a block as occupancy sensor.
+
 ## Limited Liability and Disclaimer
 
 This project is provided as an **open‑source hardware and software design** and is offered **as‑is**, without warranty of any kind.
