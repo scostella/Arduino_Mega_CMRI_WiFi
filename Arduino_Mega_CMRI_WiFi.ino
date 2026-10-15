@@ -614,10 +614,10 @@ void loop(){
 
   // Process Panel 13 - CMRI Addresses 1049 - 1052
   if (Panel13Input) {
-    cmri.set_bit(48, checkAnalogThreshold(analogRead(A0)));
-    cmri.set_bit(49, checkAnalogThreshold(analogRead(A1)));
-    cmri.set_bit(50, checkAnalogThreshold(analogRead(A2)));
-    cmri.set_bit(51, checkAnalogThreshold(analogRead(A3)));
+    cmri.set_bit(48, !checkAnalogThreshold(analogRead(A0)));
+    cmri.set_bit(49, !checkAnalogThreshold(analogRead(A1)));
+    cmri.set_bit(50, !checkAnalogThreshold(analogRead(A2)));
+    cmri.set_bit(51, !checkAnalogThreshold(analogRead(A3)));
   }
   else {
     digitalWrite(A0, cmri.get_bit(48));
@@ -628,10 +628,10 @@ void loop(){
 
   // Process Panel 14 - CMRI Addresses 1053 - 1056
   if (Panel14Input) {
-    cmri.set_bit(52, checkAnalogThreshold(analogRead(A4)));
-    cmri.set_bit(53, checkAnalogThreshold(analogRead(A5)));
-    cmri.set_bit(54, checkAnalogThreshold(analogRead(A6)));
-    cmri.set_bit(55, checkAnalogThreshold(analogRead(A7)));
+    cmri.set_bit(52, !checkAnalogThreshold(analogRead(A4)));
+    cmri.set_bit(53, !checkAnalogThreshold(analogRead(A5)));
+    cmri.set_bit(54, !checkAnalogThreshold(analogRead(A6)));
+    cmri.set_bit(55, !checkAnalogThreshold(analogRead(A7)));
   }
   else {
     digitalWrite(A4, cmri.get_bit(52));
@@ -642,10 +642,10 @@ void loop(){
 
   // Process Panel 15 - CMRI Addresses 1057 - 1060
   if (Panel15Input) {
-    cmri.set_bit(56, checkAnalogThreshold(analogRead(A8)));
-    cmri.set_bit(57, checkAnalogThreshold(analogRead(A9)));
-    cmri.set_bit(58, checkAnalogThreshold(analogRead(A10)));
-    cmri.set_bit(59, checkAnalogThreshold(analogRead(A11)));
+    cmri.set_bit(56, !checkAnalogThreshold(analogRead(A8)));
+    cmri.set_bit(57, !checkAnalogThreshold(analogRead(A9)));
+    cmri.set_bit(58, !checkAnalogThreshold(analogRead(A10)));
+    cmri.set_bit(59, !checkAnalogThreshold(analogRead(A11)));
   }
   else {
     digitalWrite(A8, cmri.get_bit(56));
@@ -656,10 +656,10 @@ void loop(){
 
   // Process Panel 16 - CMRI Addresses 1061 - 1064
   if (Panel16Input) {
-    cmri.set_bit(60, checkAnalogThreshold(analogRead(A12)));
-    cmri.set_bit(61, checkAnalogThreshold(analogRead(A13)));
-    cmri.set_bit(62, checkAnalogThreshold(analogRead(A14)));
-    cmri.set_bit(63, checkAnalogThreshold(analogRead(A15)));
+    cmri.set_bit(60, !checkAnalogThreshold(analogRead(A12)));
+    cmri.set_bit(61, !checkAnalogThreshold(analogRead(A13)));
+    cmri.set_bit(62, !checkAnalogThreshold(analogRead(A14)));
+    cmri.set_bit(63, !checkAnalogThreshold(analogRead(A15)));
   }
   else {
     digitalWrite(A12, cmri.get_bit(60));
