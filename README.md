@@ -349,6 +349,12 @@ These projects may be used together to form a complete CMRI‑controlled lightin
 
 ---
 
+## Changelog
+
+20261015.1 - Added inversion to read output for analog pins for correct evaluation as an input.
+
+---
+
 ## Repository Contents
 
 ```text
